@@ -9,6 +9,21 @@ Before you begin, ensure you have the following installed:
 - **Yarn**: You can install it globally with the command:
   ```bash
   npm install --global yarn  
+1. **Clone the Repository**:
+   Open your terminal and run the following commands to clone the repository and navigate into the project directory:
+   ```bash
+   git clone https://github.com/MohxinM/UsersAdmin.git
+   cd ADMIN-PORTAL
+1. **Install the Packages**:
+   Open your terminal and run the following commands to clone the repository and navigate into the project directory:
+   ```bash
+   git clone <repository-url>
+   cd ADMIN-PORTAL
+   install node modules
+   yarn install
+   start project
+   yarn dev
+
 
 ## Overview
 The User Management Application is a full-stack web application designed to facilitate the management of user data. Built using **Next.js** for the frontend and **Express.js** for the backend, the application leverages **Material-UI (MUI)** for a responsive and visually appealing user interface. Users can view, create, edit, and delete user records, as well as toggle user statuses between "Active" and "Inactive".
