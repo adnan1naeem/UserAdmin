@@ -13,13 +13,9 @@ Before you begin, ensure you have the following installed:
    Open your terminal and run the following commands to clone the repository and navigate into the project directory:
    ```bash
    git clone https://github.com/MohxinM/UsersAdmin.git
-1. **Install the Packages**:
-   Open your terminal and run the following commands to clone the repository and navigate into the project directory:
-   ```bash
    cd UserAdmin
    yarn install
    yarn dev
-
 
 ## Overview
 The User Management Application is a full-stack web application designed to facilitate the management of user data. Built using **Next.js** for the frontend and **Express.js** for the backend, the application leverages **Material-UI (MUI)** for a responsive and visually appealing user interface. Users can view, create, edit, and delete user records, as well as toggle user statuses between "Active" and "Inactive".
