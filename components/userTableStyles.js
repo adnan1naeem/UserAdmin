@@ -26,24 +26,24 @@ export const CustomSwitch = styled((props) => (
 
 export const styles = {
   paper: {
-    maxWidth: '90%',
+    maxWidth: { xs: '100%', sm: '90%' },
     width: '100%',
     margin: '20px auto',
     backgroundColor: 'white',
-    border:'none',
-    boxShadow:'none'
-   
+    border: 'none',
+    boxShadow: 'none'
+
   },
   paperTwo: {
     maxWidth: '95%',
     width: '100%',
     margin: '20px auto',
     backgroundColor: 'white',
-    border:'none',
-    boxShadow:'none',
-    borderRadius:'30px',
-    paddingBottom:'2%'
-   
+    border: 'none',
+    boxShadow: 'none',
+    borderRadius: '30px',
+    paddingBottom: '2%'
+
   },
   box: {
     padding: '16px',
