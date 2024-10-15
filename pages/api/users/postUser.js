@@ -1,6 +1,6 @@
 // pages/api/users/postUser.js
 import dbConnect from '../../../lib/dbConnect'; // Adjust the path as necessary
-import SampleUser from '../../../models/User'; // Adjust the import according to your model file structure
+import User from '../../../models/User'; // Adjust the import according to your model file structure
 
 export default async function handler(req, res) {
   await dbConnect();
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     case 'POST':
       try {
         console.log(req.body); // Log the request body
-        const user = await SampleUser.create(req.body); // Add new user
+        const user = await User.create(req.body); // Add new user
         res.status(201).json({ success: true, data: user });
       } catch (error) {
         console.error('Error creating user:', error);

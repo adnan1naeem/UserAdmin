@@ -1,6 +1,6 @@
 // pages/api/users/updateUser.js
 import dbConnect from '../../../lib/dbConnect';
-import SampleUser from '../../../models/User'; // Adjust the import according to your model file structure
+import User from '../../../models/User'; // Adjust the import according to your model file structure
 
 export default async function handler(req, res) {
   await dbConnect();
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
           return res.status(400).json({ success: false, error: 'User ID is required' });
         }
 
-        const user = await SampleUser.findByIdAndUpdate(
+        const user = await User.findByIdAndUpdate(
           id,
           updateFields,
           { new: true } // Return the updated document
