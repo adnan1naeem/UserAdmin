@@ -2,6 +2,11 @@
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
+  unique_id: {
+    type: String,
+    unique:true,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -9,7 +14,6 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true, // Ensure email addresses are unique
   },
   status: {
     type: String,

@@ -1,4 +1,3 @@
-// context/api.js
 export const getRequest1 = async () => {
   try {
     const response = await fetch('/api/users'); // Call the GET endpoint
