@@ -16,10 +16,8 @@ Before you begin, ensure you have the following installed:
 1. **Install the Packages**:
    Open your terminal and run the following commands to clone the repository and navigate into the project directory:
    ```bash
-   git clone <repository-url>
-   install node modules
+   cd UserAdmin
    yarn install
-   start project
    yarn dev
 
 
