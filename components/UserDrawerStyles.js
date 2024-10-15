@@ -22,9 +22,9 @@ export const StyledList = styled(List)({
 // List item style
 export const StyledListItem = styled(ListItem)(({ selected }) => ({
   borderRadius: '8px',
-  margin: '8px 0',
+  marginTop:'10%',
   padding: '12px',
-  backgroundColor: selected ? '#1677FF26' : 'transparent', // Soft blue for selected
+  backgroundColor: selected ? '#436396' : 'transparent', // Soft blue for selected
   boxShadow: selected ? '0 2px 4px rgba(0, 0, 0, 0.15)' : 'none',
   '&:hover': {
     backgroundColor: selected ? '#90caf9' : '#f5f5f5', // Light gray hover effect
@@ -41,7 +41,7 @@ export const StyledText = styled(ListItemText)(({ selected }) => ({
   color: selected ? 'white' : 'white', // Darker blue for selected text, dark gray otherwise
   '& .MuiTypography-root': {
     fontWeight: selected ? 'bold' : 'normal',
-    fontSize: '1rem',
+    fontSize: '0.9rem',
   },
 }));
 
@@ -54,6 +54,6 @@ export const StyledHeader = styled(ListItem)({
 });
 
 export const StyledTitle = styled(Typography)({
-  color: '#424242', // Dark gray for title text
+  color: 'white', // Dark gray for title text
   fontWeight: 'bold',
 });

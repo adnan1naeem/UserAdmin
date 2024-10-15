@@ -12,15 +12,15 @@ import {
   StyledText,
   StyledHeader,
   StyledTitle,
-} from './UserDrawerStyles'; // Import styled components for custom styles
+} from './userDrawerStyles'; // Import styled components for custom styles
 
 // UserDrawer component definition
 const UserDrawer = ({ open, onClose, isMobile }) => {
   // Define an array of tab items with names and icons
   const tabs = [
     { name: 'Users', icon: <PeopleIcon /> }, // Tab for Users
-    { name: 'Settings', icon: <SettingsIcon /> }, // Tab for Settings
-    { name: 'Reports', icon: <AssessmentIcon /> }, // Tab for Reports
+    // { name: 'Settings', icon: <SettingsIcon /> }, // Tab for Settings
+    // { name: 'Reports', icon: <AssessmentIcon /> }, // Tab for Reports
   ];
   
   // State to track the currently selected tab, default is 'Users'

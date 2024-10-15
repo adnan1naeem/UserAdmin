@@ -100,6 +100,7 @@ const UserTable = ({ users, fetchData }) => {
 
   return (
     <Paper sx={styles.paper}>
+    <Paper sx={styles.paperTwo}>
       <Box sx={styles.box}>
         <Typography variant="h6" component="div" sx={{ marginRight: 2 }}>
           Filter by Status:
@@ -178,7 +179,7 @@ const UserTable = ({ users, fetchData }) => {
       </TableContainer>
 
       {/* Edit Modal */}
-      <Dialog open={editModalOpen} onClose={handleModalClose}>
+      <Dialog open={editModalOpen} onClose={handleModalClose} >
         <DialogTitle>Edit User</DialogTitle>
         <DialogContent>
           {currentUser && (
@@ -221,6 +222,7 @@ const UserTable = ({ users, fetchData }) => {
           {snackbarMessage}
         </Alert>
       </Snackbar>
+      </Paper>
     </Paper>
   );
 };

@@ -29,7 +29,21 @@ export const styles = {
     maxWidth: '90%',
     width: '100%',
     margin: '20px auto',
-    backgroundColor: '#f7f9fc',
+    backgroundColor: 'white',
+    border:'none',
+    boxShadow:'none'
+   
+  },
+  paperTwo: {
+    maxWidth: '95%',
+    width: '100%',
+    margin: '20px auto',
+    backgroundColor: 'white',
+    border:'none',
+    boxShadow:'none',
+    borderRadius:'30px',
+    paddingBottom:'2%'
+   
   },
   box: {
     padding: '16px',
@@ -38,7 +52,7 @@ export const styles = {
     alignItems: 'center',
   },
   tableHead: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#F0F7FF',
   },
   tableRow: {
     '&:hover': {
@@ -46,10 +60,10 @@ export const styles = {
     },
   },
   activeRow: {
-    backgroundColor: '#e8f5e9', // Light green for active
+    backgroundColor: 'white', // Light green for active
   },
   inactiveRow: {
-    backgroundColor: '#ffebee', // Light red for inactive
+    backgroundColor: 'white', // Light red for inactive
   },
   chip: {
     margin: 0.5,
