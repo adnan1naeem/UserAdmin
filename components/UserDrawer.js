@@ -12,7 +12,7 @@ import {
   StyledText,
   StyledHeader,
   StyledTitle,
-} from './userDrawerStyles'; // Import styled components for custom styles
+} from './UserDrawerStyles'; // Import styled components for custom styles
 
 // UserDrawer component definition
 const UserDrawer = ({ open, onClose, isMobile }) => {
