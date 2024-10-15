@@ -1,69 +1,59 @@
-const API_TOKEN = process.env.REACT_APP_API_TOKEN; 
-const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
-export const getRequest = async (endpoint) => {
+// context/api.js
+export const getRequest1 = async () => {
   try {
-    console.log(process.env.REACT_APP_API_URL)
-    const response = await fetch(`${"http://192.168.1.110:4000/api/admin/sampleUser/"}${endpoint}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${API_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch('/api/users'); // Call the GET endpoint
+    const data = await response.json();
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(data.error || 'Something went wrong');
     }
 
-    return await response.json();
+    return data;
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
   }
 };
-export const updateUser = async (endpoint, body) => {
-    try {
-        console.log("userData"+JSON?.stringify(body))
-        const response = await fetch(`${"http://192.168.1.110:4000/api/admin/sampleUser/"}${endpoint}`, {
-            method: 'PUT', 
-            headers: {
-                'Authorization': `Bearer ${API_TOKEN}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON?.stringify(body),
-        });
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Failed to update user');
-        }
-
-        const data = await response.json();
-        return data;
-
-    } catch (error) {
-        console.error('Error updating user:', error);
-        throw error;
-    }
-};
-export const postRequest = async (endpoint, body) => {
+export const postRequest = async (userData) => {
   try {
-    const response = await fetch(`${API_ENDPOINT}${endpoint}`, {
+    const response = await fetch('/api/users/postUser', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${API_TOKEN}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(body), // Convert body object to JSON
+      body: JSON.stringify(userData),
     });
+    const data = await response.json();
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(data.error || 'Something went wrong');
     }
 
-    return await response.json();
+    return data;
   } catch (error) {
     console.error('Error posting data:', error);
-    throw error; // Rethrow the error for further handling
+    throw error;
+  }
+};
+export const putRequest = async (userId, updateFields) => {
+  try {
+    const response = await fetch('/api/users/updateUser', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id: userId, ...updateFields }), // Spread the updateFields object
+    });
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Something went wrong');
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error updating data:', error);
+    throw error;
   }
 };

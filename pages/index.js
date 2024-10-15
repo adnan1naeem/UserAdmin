@@ -1,3 +1,4 @@
+// pages/index.js or pages/home.js (your Home component)
 import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -5,17 +6,16 @@ import { motion } from 'framer-motion';
 import UserDrawer from './../components/UserDrawer';
 import UserTable from './../components/UserTable';
 import Header from './../components/Header';
-import { getRequest } from '../context/api';
+import { getRequest1, postRequest } from '../context/api';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
   const [open, setOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width:900px)');
-  const endpoint = 'all-users';
 
   const fetchData = async () => {
     try {
-      const result = await getRequest(endpoint);
+      const result = await getRequest1();
       console.log(result.data);
       setUsers(result.data); 
     } catch (error) {
@@ -25,7 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchData();
-  }, [endpoint]);
+  }, []);
 
 
   const tableVariants = {
@@ -34,9 +34,9 @@ const Home = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', height: '100vh', position: 'relative',flexDirection:{xs:'column',md:"row"} }}>
-     {isMobile&& <Header isMobile={isMobile} onMenuClick={() => setOpen(!open)} />}
-       <UserDrawer open={open} onClose={() => setOpen(false)} isMobile={isMobile} />
+    <Box sx={{ display: 'flex', height: '100vh', position: 'relative', flexDirection: { xs: 'column', md: "row" } }}>
+      {isMobile && <Header isMobile={isMobile} onMenuClick={() => setOpen(!open)} />}
+      <UserDrawer open={open} onClose={() => setOpen(false)} isMobile={isMobile} />
       <Box
         component="main"
         sx={{

@@ -20,7 +20,7 @@ import {
   Snackbar, // Import Snackbar
   Alert, // Import Alert for styled notifications
 } from '@mui/material';
-import { updateUser } from '../context/api';
+import { putRequest, updateUser } from '../context/api';
 import WarningIcon from '@mui/icons-material/Warning';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import EditIcon from '@mui/icons-material/Edit'; // Import Edit icon
@@ -37,11 +37,10 @@ const UserTable = ({ users, fetchData }) => {
   const handleStatusToggle = async (id, currentStatus) => {
     try {
       setLoadingId(id);
-      const updatedStatus = !currentStatus ? 'active' : 'inactive';
-      const endpoint = `update-user/${id}`;
-      const body = { status: updatedStatus };
-      await updateUser(endpoint, body);
-      await fetchData();
+      const updatedStatus = currentStatus === 'active' ? 'inactive' : 'active';
+      const body = { status: updatedStatus }; // Prepare the body for update
+      await putRequest(id, body); // Call the putRequest function with the user ID and updated status
+      await fetchData(); // Fetch updated user data
     } catch (error) {
       console.error('Failed to update user status:', error);
     } finally {
@@ -60,10 +59,10 @@ const UserTable = ({ users, fetchData }) => {
   };
 
   const handleSave = async () => {
+    console.log(currentUser)
     if (currentUser) {
-      const endpoint = `update-user/${currentUser.id}`;
       const body = { name: currentUser.name, email: currentUser.email };
-      await updateUser(endpoint, body);
+      await putRequest(currentUser?._id, body);
       await fetchData();
       handleSnackbarOpen('User updated successfully!'); // Show snackbar
       handleModalClose();
@@ -155,7 +154,7 @@ const UserTable = ({ users, fetchData }) => {
                     <>
                       <CustomSwitch
                         checked={user.status === 'active'}
-                        onChange={() => handleStatusToggle(user.id, user.status === 'active')}
+                        onChange={() => handleStatusToggle(user._id, user.status)}
                       />
                       <Typography
                         variant="body2"
