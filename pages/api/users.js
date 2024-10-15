@@ -1,6 +1,6 @@
 // pages/api/users.js
 import dbConnect from '../../lib/dbConnect';
-import SampleUser from '../../models/User'; // Adjust the import according to your model file structure
+import User from '../../model/User'; // Adjust the import according to your model file structure
 
 export default async function handler(req, res) {
   try {
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const users = await SampleUser.find({}); // Get all users
+        const users = await User.find({}); // Get all users
         res.status(200).json({ success: true, data: users });
       } catch (error) {
         res.status(400).json({ success: false, error: error.message });
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     case 'POST':
       try {
         console.log(req.body);
-        const user = await SampleUser.create(req.body); // Add new user
+        const user = await User.create(req.body); // Add new user
         res.status(201).json({ success: true, data: user });
       } catch (error) {
         res.status(400).json({ success: false, error: error.message });

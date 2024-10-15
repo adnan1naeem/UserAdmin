@@ -1,6 +1,6 @@
 // pages/api/users/postUser.js
 import dbConnect from '../../../lib/dbConnect'; // Adjust the path as necessary
-import User from '../../../models/User'; // Adjust the import according to your model file structure
+import User from '../../../model/User'; // Adjust the import according to your model file structure
 
 export default async function handler(req, res) {
   await dbConnect();
