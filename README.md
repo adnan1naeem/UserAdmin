@@ -13,12 +13,10 @@ Before you begin, ensure you have the following installed:
    Open your terminal and run the following commands to clone the repository and navigate into the project directory:
    ```bash
    git clone https://github.com/MohxinM/UsersAdmin.git
-   cd ADMIN-PORTAL
 1. **Install the Packages**:
    Open your terminal and run the following commands to clone the repository and navigate into the project directory:
    ```bash
    git clone <repository-url>
-   cd ADMIN-PORTAL
    install node modules
    yarn install
    start project
