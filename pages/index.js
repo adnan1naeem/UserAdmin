@@ -4,8 +4,8 @@ import { Box, Typography } from '@mui/material'; // Import Material UI component
 import useMediaQuery from '@mui/material/useMediaQuery'; // Import media query hook
 import { motion } from 'framer-motion'; // Import framer-motion for animations
 import UserDrawer from '../components/UserDrawer'; // Import UserDrawer component
-import UserTable from '../components/userTable'; // Import UserTable component
-import Header from '../components/header'; // Import Header component
+import UserTable from '../components/UserTable'; // Import UserTable component
+import Header from '../components/Header'; // Import Header component
 import { getRequest1, postRequest } from '../context/api'; // Import API requests
 
 const Home = () => {
