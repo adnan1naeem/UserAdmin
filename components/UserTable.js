@@ -226,15 +226,7 @@ const UserTable = ({ users, fetchData }) => {
         </Dialog>
 
         {/* Snackbar for Notifications */}
-        <Snackbar
-          open={snackbarOpen} // Control visibility of Snackbar
-          autoHideDuration={6000} // Duration before automatically hiding
-          onClose={handleSnackbarClose} // Handle close event
-        >
-          <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
-            {snackbarMessage} {/* Display snackbar message */}
-          </Alert>
-        </Snackbar>
+       
       </Paper>
     </Paper>
   );
