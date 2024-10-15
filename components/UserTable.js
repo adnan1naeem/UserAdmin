@@ -142,13 +142,13 @@ const UserTable = ({ users, fetchData }) => {
             <TableBody>
               {filteredUsers.map(user => ( // Map through filtered users
                 <TableRow
-                  key={user?._id} // Unique key for each row
+                  key={user.id} // Unique key for each row
                   sx={{
                     ...styles.tableRow, // Apply base styles
                     ...(user.status === 'inactive' ? styles.inactiveRow : styles.activeRow), // Conditional styling based on status
                   }}
                 >
-                  <TableCell>{user.unique_id}</TableCell> {/* User ID */}
+                  <TableCell>{user.id}</TableCell> {/* User ID */}
                   <TableCell>
                     <Typography variant="body2" sx={styles.userName(user.status)}> {/* User Name with status indicator */}
                       {user.name}
@@ -226,7 +226,7 @@ const UserTable = ({ users, fetchData }) => {
         </Dialog>
 
         {/* Snackbar for Notifications */}
-       
+      
       </Paper>
     </Paper>
   );
