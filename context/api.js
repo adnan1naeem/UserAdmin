@@ -3,7 +3,7 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 export const getRequest = async (endpoint) => {
   try {
     console.log(process.env.REACT_APP_API_URL)
-    const response = await fetch(`${"http://localhost:4000/api/admin/sampleUser/"}${endpoint}`, {
+    const response = await fetch(`${"http://192.168.1.110:4000/api/admin/sampleUser/"}${endpoint}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${API_TOKEN}`,
@@ -24,7 +24,7 @@ export const getRequest = async (endpoint) => {
 export const updateUser = async (endpoint, body) => {
     try {
         console.log("userData"+JSON?.stringify(body))
-        const response = await fetch(`${"http://localhost:4000/api/admin/sampleUser/"}${endpoint}`, {
+        const response = await fetch(`${"http://192.168.1.110:4000/api/admin/sampleUser/"}${endpoint}`, {
             method: 'PUT', 
             headers: {
                 'Authorization': `Bearer ${API_TOKEN}`,
